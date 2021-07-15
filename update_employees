@@ -1,0 +1,13 @@
+/* updates EMP_YEARS in EMPLOYEE table to equal the difference between
+the run date and the EMP_HIREDATE */
+USE ch07_ConstructCo;
+UPDATE EMPLOYEE
+SET EMP_YEARS = (SELECT DATEDIFF(YEAR, EMP_HIREDATE, GETDATE()));
+
+
+/* select statement to view update to EMP_YEARS in EMPLOYEE table */
+USE ch07_ConstructCo;
+SELECT EMP_NUM, EMP_HIREDATE, EMP_YEARS
+FROM EMPLOYEE;
+
+
