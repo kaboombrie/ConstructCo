@@ -1,0 +1,25 @@
+/* query to list employee information */
+
+CREATE VIEW Employee_Info AS
+SELECT EMP_LNAME, EMP_FNAME, JOB_CODE, EMP_HIREDATE
+FROM EMPLOYEE;
+SELECT * FROM Employee_Info;
+
+
+/* query to list employees hired >2000-01-01 */
+
+CREATE VIEW Employee_Hire_2000 AS
+SELECT EMP_LNAME, EMP_FNAME, EMP_HIREDATE
+FROM EMPLOYEE
+WHERE EMP_HIREDATE > '2000-01-01';
+SELECT * FROM Employee_Hire_2000;
+
+
+/* query where employee num from employee table equals employee num 
+from assignment table */
+
+SELECT EMPLOYEE.EMP_LNAME, ASSIGNMENT.PROJ_NUM, ASSIGNMENT.ASSIGN_JOB
+FROM EMPLOYEE
+INNER JOIN ASSIGNMENT ON EMPLOYEE.EMP_NUM=ASSIGNMENT.EMP_NUM;
+
+
